@@ -45,12 +45,8 @@ public class Player {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("------["+ name +"] (" + cards.size()+")-------\n");
+        sb.append("------["+ name +"]-------\n");
         sb.append(cards.toString());
-//        for (Card card : hand) {
-//            sb.append(card.toString());
-//            sb.append("\n");
-//        }
         return sb.toString();
     }
 }

@@ -1,4 +1,4 @@
-My solution for Project euler 54#
+My solution for Project Euler 54#
 ===================
 
 ### Poker hand ranking

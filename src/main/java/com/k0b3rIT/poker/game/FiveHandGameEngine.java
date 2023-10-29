@@ -20,33 +20,22 @@ public class FiveHandGameEngine extends GameEngine {
 
         deal(deck, players);
 
-
         for (Player player : players) {
             player.setCurrentHand(rankingEngine.getRanking(player.getCards()));
             System.out.println(player);
             System.out.println("\033[0;31m" + player.getCurrentHand() + "\033[0m");
-
         }
 
-        players = players.stream().sorted((a,b)-> compare(a,b)*-1).collect(Collectors.toList());
+
+
+        Player winner = rankingEngine.selectTheWinner(players);
 
         System.out.println("\n###### WINNER ######");
-        System.out.println(players.get(0));
+        System.out.println(winner);
 
     }
 
 
-    private int compare(Player playerA, Player playerB) {
-        HandRanking pa = HandRanking.getByClass(playerA.getCurrentHand().getClass());
-        HandRanking pb = HandRanking.getByClass(playerB.getCurrentHand().getClass());
-        if (pa.ordinal() < pb.ordinal()) {
-            return 1;
-        } else if (pb.ordinal() < pa.ordinal()) {
-            return -1;
-        } else {
-            return playerA.getCurrentHand().compareTo(playerB.getCurrentHand());
-        }
-    }
 
 
     private void burnCard(Deck deck) {

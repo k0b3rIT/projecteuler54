@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+}
+
+group 'com.k0b3rIT'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    implementation 'commons-io:commons-io:2.11.0'
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+
+}
